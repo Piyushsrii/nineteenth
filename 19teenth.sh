@@ -49,36 +49,29 @@ public class EmployeeSwitch4
         public static final int IS_PART_TIME=1;
         public static final int IS_FULL_TIME=2;
         public static final int EMP_RATE_PER_HOUR=20;
-        public static final int NUM_OF_WORKING_DAYS=5;
         public static void main(String args[])
         {
-        int empHRS=0;
         int empWage=0;
-        int totalEmpWage=0;
-        int totalEmpHrs=0;
-        int totalworkingdays=0;
-        while(totalworkingdays<NUM_OF_WORKING_DAYS)
+        int empHRS=0;
+        int empcheck=(int)Math.floor(Math.random()*10)%2;
+        if(empcheck==IS_FULL_TIME)
         {
-         totalworkingdays++;
-         int empcheck=(int)Math.floor(Math.random()*10)%3;
-         switch(empcheck)
+        empHRS=8;
+        empWage= EMP_RATE_PER_HOUR*empHRS;
+        System.out.println("employee wage="+empWage);
+        }
+        elseif(empcheck==IS_PART_TIME)
         {
-           case IS_FULL_TIME:
-           empHRS=8;
-           break;
-           case IS_PART_TIME:
-           empHRS=4;
-           break;
-           default:
-           empHRS=0;
+          empHRS=4;
+          empWage= EMP_RATE_PER_HOUR*empHRS;
+          System.out.println("employee wage="+empWage);
         }
-         totalEmpHrs+=empHRS;
-         System.out.println("totalworkingdays"+totalworkingdays+" "+"totalEmpHrs"+totalEmpHrs);
-        }
-         totalEmpWage=totalEmpHrs*EMP_RATE_PER_HOUR;
-         System.out.println("total employee wage"+totalEmpWage);
-        }
+        else
+        System.out.println("No value");
 }
+}
+
+
 
 
 
